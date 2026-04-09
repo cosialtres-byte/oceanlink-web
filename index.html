@@ -2,109 +2,87 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OceanLink Global - Oficial</title>
     <style>
+        /* RESET GENERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; background-color: #0b111e; scroll-behavior: smooth; }
-        
-        /* NAVEGACIÓN */
-        nav { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(11, 17, 30, 0.95); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .logo { font-size: 1.8rem; font-weight: bold; color: #2dd4bf; letter-spacing: 2px; }
-        .menu-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.85rem; text-transform: uppercase; font-weight: bold; }
+        body, html { 
+            height: 100%; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: white; 
+            background-color: #0b111e; 
+            scroll-behavior: smooth;
+        }
 
-        /* SECCIONES */
-        .seccion { height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; }
-        
-        /* FOTOS (Asegúrate de tener foto1.jpg a foto5.jpg en la misma carpeta) */
-        #inicio { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('foto2.jpg'); }
-        #bienvenida { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('foto1.jpg'); }
-        #tecnologia { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('foto3.jpg'); }
-        #servicio { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('foto4.jpg'); }
-        #suscripcion { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('foto5.jpg'); }
-        #blog { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=1920'); }
-        #contacto { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1920'); }
+        /* BARRA DE NAVEGACIÓN (Línea 11 que querías arreglar) */
+        nav { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 40px; 
+            background: rgba(11, 17, 30, 0.95); 
+            z-index: 1000;
+            border-bottom: 1px solid #1f2937;
+        }
 
-        /* CAJAS MODERNISTAS */
-        .caja-3d { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); padding: 50px; border-radius: 30px; backdrop-filter: blur(25px); text-align: center; max-width: 850px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .caja-blog { max-height: 50vh; overflow-y: auto; padding-right: 15px; text-align: left; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; }
-        .caja-blog::-webkit-scrollbar { width: 6px; }
-        .caja-blog::-webkit-scrollbar-thumb { background: #2dd4bf; border-radius: 10px; }
-        
-        h1 { font-size: 3.5rem; margin-bottom: 20px; color: #2dd4bf; }
-        p { font-size: 1.3rem; color: #cbd5e1; line-height: 1.6; font-weight: 300; }
-        strong { color: #fff; font-weight: bold; }
+        .logo img { 
+            height: 60px; 
+            width: auto; 
+            display: block;
+        }
+
+        .menu-links a { 
+            color: white; 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* SECCIONES DE RELLENO PARA QUE LA PAGINA TENGA CUERPO */
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #1f2937;
+        }
+
+        #inicio { background: radial-gradient(circle, #1a2a4a 0%, #0b111e 100%); }
     </style>
 </head>
-<body style="margin: 0; padding: 0;">
-  <navegación>
-        <div style="float: left; padding: 10px 0 10px 20px;">
+<body>
+
+    <nav>
+        <div class="logo">
             <a href="index.html">
-                <img src="logo-web.png" alt="OceanLink Global" style="height: 70px; width: auto;">
+                <img src="logo-web.png" alt="OceanLink Global">
             </a>
         </div>
-
-        <div class="menu-links" style="float: right; padding: 25px 20px 0 0;">
-            <a href="#inicio" style="margin: 0 10px; text-decoration: none; color: white;">Inicio</a>
-            <a href="#bienvenida" style="margin: 0 10px; text-decoration: none; color: white;">Bienvenida</a>
-            <a href="#tecnologia" style="margin: 0 10px; text-decoration: none; color: white;">Tecnología</a>
-            <a href="#servicio" style="margin: 0 10px; text-decoration: none; color: white;">Servicio</a>
-            <a href="#suscripcion" style="margin: 0 10px; text-decoration: none; color: white;">Suscripción</a>
-            <a href="#blog" style="margin: 0 10px; text-decoration: none; color: white;">Blog</a>
-            <a href="#contacto" style="margin: 0 10px; text-decoration: none; color: white;">Contacto</a>
+        <div class="menu-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#bienvenida">Bienvenida</a>
+            <a href="#tecnologia">Tecnología</a>
+            <a href="#servicio">Servicio</a>
+            <a href="#suscripcion">Suscripción</a>
+            <a href="#blog">Blog</a>
+            <a href="#contacto">Contacto</a>
         </div>
-        <div style="clear: both;"></div>
-    </navegación>
+    </nav>
 
-    <section id="inicio" class="seccion">
-        <div class="caja-3d">
-            <h1>OceanLink Global</h1>
-            <p>Liderando la nueva era de la logística internacional con soluciones multimodales inteligentes.</p>
-        </div>
+    <section id="inicio">
+        <h1>BIENVENIDO A OCEANLINK GLOBAL</h1>
     </section>
 
-    <section id="bienvenida" class="seccion">
-        <div class="caja-3d">
-            <h1>Bienvenida</h1>
-            <p>En <strong>OceanLink Global</strong>, impulsamos una nueva era en el comercio y la logística internacional. Conectamos el mundo mediante una integración perfecta del transporte <strong>Marítimo, Terrestre y Aéreo</strong>, ofreciendo soluciones de <strong>Logística Multimodal</strong> diseñadas para la eficiencia absoluta y la seguridad de su carga en cada frontera.<br>Su socio estratégico en transporte global.</p>
-        </div>
-    </section>
-
-    <section id="tecnologia" class="seccion">
-        <div class="caja-3d">
-            <h1>Tecnología de Seguridad</h1>
-            <p>Protegemos su inversión con sistemas de <strong>Rastreo Satelital</strong> en tiempo real y protocolos de <strong>Ciberseguridad</strong> de última generación. La integridad de su carga y la confidencialidad de sus datos son nuestra prioridad absoluta.</p>
-        </div>
-    </section>
-
-    <section id="servicio" class="seccion">
-        <div class="caja-3d">
-            <h1>Servicios Integrales</h1>
-            <p>Gestionamos su carga mediante <strong>Fletes Marítimos</strong> de gran volumen, <strong>Transporte Terrestre</strong> nacional e internacional y soluciones de <strong>Carga Aérea</strong> para envíos urgentes. Eficiencia garantizada en cada milla.</p>
-        </div>
-    </section>
-
-    <section id="suscripcion" class="seccion">
-        <div class="caja-3d">
-            <h1>Suscripción Profesional</h1>
-            <p>Únase a nuestra red exclusiva para recibir <strong>Tarifas Preferenciales</strong> y reportes de inteligencia. Optimice los costos de su logística con el respaldo de <strong>OceanLink Global</strong>.</p>
-        </div>
-    </section>
-
-    <section id="blog" class="seccion">
-        <div class="caja-3d">
-            <h1>Blog Logístico</h1>
-            <div class="caja-blog">
-                <p><strong>13 de Enero, 2026:</strong> Bienvenido a nuestro portal de noticias. Aquí podrá encontrar toda la información sobre las nuevas rutas de <strong>OceanLink Global</strong>. Estamos expandiendo nuestra red para conectar mercados globales de forma más rápida y segura.<br><br>Este espacio está diseñado para contener textos extensos sobre el comercio internacional. Usted puede seguir escribiendo aquí todo lo que necesite y la ventana permitirá leerlo cómodamente mediante el desplazamiento interno.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="seccion">
-        <div class="caja-3d">
-            <h1>Contacto</h1>
-            <p>Email: <strong>info@oceanlinkglobal.com</strong><br>Soporte 24/7 para operaciones internacionales.</p>
-        </div>
-    </section>
-
-</body>
+    </body>
 </html>
